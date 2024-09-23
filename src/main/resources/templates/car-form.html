@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Add New Car</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Add New Car</h1>
+    <form action="/admin/cars" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Make:</label>
+            <input type="text" name="make" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>Model:</label>
+            <input type="text" name="model" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>Year:</label>
+            <input type="number" name="year" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>Price per Day:</label>
+            <input type="number" name="pricePerDay" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>Image file:</label>
+            <input type="file" name="imageUrl" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>Availability:</label>
+            <select name="availability" class="form-control" required>
+                <option value="true">Available</option>
+                <option value="false">Unavailable</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Add Car</button>
+        <a href="/cars" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

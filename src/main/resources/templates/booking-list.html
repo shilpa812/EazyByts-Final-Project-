@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Booking Form</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Book the Car</h1>
+    <form action="/bookings/create" method="post">
+        <input type="hidden" name="carId" th:value="${car.carId}"/>
+        <div class="form-group">
+            <label>Start Date:</label>
+            <input type="date" name="startDate" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label>End Date:</label>
+            <input type="date" name="endDate" class="form-control" required/>
+        </div>
+        <button type="submit" class="btn btn-success">Book Now</button>
+    </form>
+</div>
+</body>
+</html>

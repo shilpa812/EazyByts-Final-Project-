@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Payments</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Payments</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Payment Date</th>
+                    <th>Payment Method</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="payment : ${payments}">
+                    <td th:text="${payment.id}"></td>
+                    <td th:text="${payment.amount}"></td>
+                    <td th:text="${payment.status}"></td>
+                    <td th:text="${payment.paymentDate}"></td>
+                    <td th:text="${payment.paymentMethod}"></td>
+                    <td>
+                        <a th:href="@{/payments/{id}/update(id=${payment.id})}">Update</a>
+                        <a th:href="@{/payments/{id}/delete(id=${payment.id})}">Delete</a>
+                        </td>
+                                 </tr>
+            </tbody>
+        </table>
+        <a href="/payments/create" class="btn btn-primary">Create New Payment</a>
+    </div>
+</body>
+</html>
+                        

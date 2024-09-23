@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Car Details</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 th:text="${car.make} + ' ' + ${car.model}"></h1>
+    <img th:src="${car.imageUrl}" class="img-fluid" alt="Car Image"/>
+    <p><strong>Year:</strong> <span th:text="${car.year}"></span></p>
+    <p><strong>Price per day:</strong> $<span th:text="${car.pricePerDay}"></span></p>
+    <p><strong>Status:</strong> <span th:text="${car.availability} ? 'Available' : 'Unavailable'"></span></p>
+    <a th:href="@{/bookings/create/{carId}(carId=${car.carId})}" class="btn btn-success" th:if="${car.availability}">Book Now</a>
+    <a th:href="@{/cars}" class="btn btn-secondary">Back to Cars</a>
+</div>
+</body>
+</html>

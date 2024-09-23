@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            margin-top: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Update Booking</h2>
+        <form action="/bookings/update" method="post" th:object="${booking}">
+            <input type="hidden" th:field="*{carId}">
+            <div>
+                <label for="car">Car:</label>
+                <select id="car" th:field="*{car}">
+                    <option th:each="car : ${cars}" th:value="${car.id}" th:text="${car.name}"></option>
+                </select>
+                <span class="error" th:if="${#fields.hasErrors('car')}" th:errors="*{car}">Car Error</span>
+            </div>
+            <div>
+                <label for="user">User:</label>
+                <select id="user" th:field="*{userId}">
+                    <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.firstName} + ' ' + ${user.lastName}"></option>
+                </select>
+
+            </div>
+            <div>
+                <label for="startDate">Start Date:</label>
+                <input type="datetime-local" id="startDate" th:field="*{startDate}">
+                <span class="error" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}">Start Date Error</span>
+            </div>
+ <div>
+                <label for="endDate">End Date:</label>
+                <input type="datetime-local" id="endDate" th:field="*{endDate}">
+                <span class="error" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}">End Date Error</span>
+            </div>
+            <div>
+                <label for="status">Status:</label>
+                <select id="status" th:field="*{status}">
+                    <option th:each="status : ${statuses}" th:value="${status}" th:text="${status}"></option>
+                </select>
+                <span class="error" th:if="${#fields.hasErrors('status')}" th:errors="*{status}">Status Error</span>
+            </div>
+            <div>
+                <label for="totalPrice">Total Price:</label>
+                <input type="number" id="totalPrice" th:field="*{totalPrice}">
+                <span class="error" th:if="${#fields.hasErrors('totalPrice')}" th:errors="*{totalPrice}">Total Price Error</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Booking</button>
+        </form>
+    </div>
+</body>
+</html>
+            

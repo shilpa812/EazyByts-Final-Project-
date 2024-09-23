@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .profile-info {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-info">
+        <h2>Profile</h2>
+        <p>First Name: ${user.firstName}</p>
+        <p>Last Name: ${user.lastName}</p>
+        <p>Email: ${user.email}</p>
+        <a href="/edit-profile" class="btn btn-primary">Edit Profile</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Car Rental Service</title>
+    <style>
+        body {
+            background-color: white;
+           
+        }
+        .hero {
+           background-image: url(hero.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color:black;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .card {
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container">
+        <h1>Welcome to Our Car Rental Service</h1>
+        <p>Your journey begins here. Choose your ride and start exploring.</p>
+        <a href="/cars" class="btn btn-primary btn-lg">Browse Cars</a>
+        <a href="/register" class="btn btn-light btn-lg">Register Now</a>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2>Why Choose Us?</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Wide Selection</h5>
+                    <p class="card-text">Choose from a wide variety of cars that suit your needs and budget.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Affordable Prices</h5>
+                    <p class="card-text">We offer competitive pricing to ensure you get the best deal possible.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Excellent Support</h5>
+                    <p class="card-text">Our customer service team is here to assist you 24/7 for a hassle-free experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Car Rental Service. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
